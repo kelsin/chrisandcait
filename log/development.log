@@ -1,0 +1,11 @@
+
+
+Processing PagesController#index (for 207.180.155.44 at 2009-02-01 17:17:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--3fa7361160ccf198c6896c9c25105e8d1ed29e31
+  Parameters: {"action"=>"index", "controller"=>"pages"}
+  [4;36;1mSQL (0.000741)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000478)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 0.02232 (44 reqs/sec) | Rendering: 0.01416 (63%) | DB: 0.00122 (5%) | 200 OK [http://www.chrisandcait.com/]
