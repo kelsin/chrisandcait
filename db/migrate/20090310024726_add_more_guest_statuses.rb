@@ -5,5 +5,7 @@ class AddMoreGuestStatuses < ActiveRecord::Migration
     end
 
     def self.down
+        remove_column(:guests, :sent_thank_you)
+        remove_column(:guests, :bride)
     end
 end

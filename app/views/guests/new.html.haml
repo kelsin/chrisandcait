@@ -1,0 +1,16 @@
+%h2 Admin
+%h3 New Guest
+- form_for @guest do |f|
+  %p
+    = f.label :name
+    = f.text_field :name, :size => 40
+  %p
+    = f.label :address
+    = f.text_area :address, :rows => 6, :cols => 40
+  %p
+    = f.label :bride, "Bride"
+    = f.radio_button :bride, true
+    = f.label :bride, "Groom"
+    = f.radio_button :bride, false
+  %p
+    = submit_tag "Create Guest"

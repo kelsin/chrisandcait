@@ -1,0 +1,10 @@
+%h2 Admin
+%h3 Guests
+%ul
+  - @guests.each do |guest|
+    %li= link_to guest.name, guest
+  - if @guests.size == 0
+    %li None
+%h3 New Guest
+= link_to "New Guest", new_guest_url
+    

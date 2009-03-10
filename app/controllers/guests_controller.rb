@@ -4,4 +4,15 @@ class GuestsController < ApplicationController
     def index
         @guests = Guest.find(:all)
     end
+
+    def new
+        @guest = Guest.new
+    end
+
+    def create
+        @guest = Guest.new(params[:guest])
+        @guest.save
+        
+        redirect_to :action => :index
+    end
 end
