@@ -1,7 +1,7 @@
 class CreateGuests < ActiveRecord::Migration
     def self.up
         create_table :guests do |t|
-            t.number "number"
+            t.integer "number"
             t.string "name"
             t.text "address"
             t.string "key"
