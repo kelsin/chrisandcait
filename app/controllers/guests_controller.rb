@@ -2,7 +2,7 @@ class GuestsController < ApplicationController
     before_filter :authenticate
     
     def index
-        @guests = Guest.find(:all)
+        @guests = Guest.find(:all, :order => "name")
     end
 
     def new
