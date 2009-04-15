@@ -1,0 +1,8 @@
+%h2 Admin
+%h3 New Category
+- form_for @category do |f|
+  %p
+    = f.label :name
+    = f.text_field :name, :size => 40
+  %p
+    = submit_tag "Create Category"

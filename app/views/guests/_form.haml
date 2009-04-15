@@ -1,0 +1,26 @@
+- form_for form do |f|
+  %p
+    = f.label :name
+    = f.text_field :name, :size => 40
+  %p
+    = f.label :address
+    = f.text_area :address, :rows => 6, :cols => 40
+  %p
+    = f.label :bride, "Bride"
+    = f.radio_button :bride, true
+    = f.label :bride, "Groom"
+    = f.radio_button :bride, false
+  %p
+    = f.label :category
+    = f.collection_select :category_id, Category.find(:all, :order => "name"), :id, :name
+  %p
+    = f.label :number_estimate
+    = f.text_field :number_estimate, :size => 4
+  %p
+    = f.label :number, "Number actual"
+    = f.text_field :number, :size => 4
+  %p
+    = f.label :sent_thank_you
+    = f.check_box :sent_thank_you
+  %p
+    = submit_tag (if form.id then "Edit Guest" else "Create Guest" end)

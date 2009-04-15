@@ -1,9 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<xhtml>
-  <head>
-    <title>Chris and Cait - Wedding Site</title>
-  </head>
-  <body>
-    <%= yield %>
-  </body>
-</xhtml>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Chris and Caitlin</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="outer-wrapper">
+    <div id="header">
+        <h1>Chris and Caitlin</h1>
+    </div>
+    
+    <ul id="nav">
+        <li<%= " class=\"you-are-here\"" if current_page?(root_url) %>><%= link_to 'Wedding', root_url %></li>
+        <li<%= " class=\"you-are-here\"" if current_page?(location_url) %>><%= link_to 'Location', location_url %></li>
+        <li<%= " class=\"you-are-here\"" if current_page?(engagement_url) %>><%= link_to 'Engagement', engagement_url %></li>
+        <li<%= " class=\"you-are-here\"" if current_page?(chriscait_url) %>><%= link_to 'Chris &amp; Cait', chriscait_url %></li>
+        <li<%= " class=\"you-are-here\"" if current_page?(registries_url) %>><%= link_to 'Registries', registries_url %></li>
+        <li class="<%= "you-are-here " if current_page?(rsvp_index_url) %>last"><%= link_to 'RSVP', rsvp_index_url %></li>
+    </ul>
+    <div id="content">
+        <%= yield %>
+        <div class="bottom"></div>
+    </div><!-- end content -->
+    <div id="footer"><p>8<span>.</span>29<span>.</span>09</p></div>
+</div>
+</body>
+</html>

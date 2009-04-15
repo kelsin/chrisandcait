@@ -1,10 +1,27 @@
-%h2 Admin
-%h3 Guests
-%ul
-  - @guests.each do |guest|
-    %li= link_to guest.name, guest
-  - if @guests.size == 0
-    %li None
-%h3 New Guest
-= link_to "New Guest", new_guest_url
+%h2== Guests (#{Category.number})
+- @categories.each do |category|
+  %h3== #{category.name} (#{category.number})
+  %h4 Bride
+  %ul.guests
+    - category.guests.cait.each do |guest|
+      %li
+        = link_to "#{guest.number_display} - #{guest.name}", guest
+        %address
+          %pre= guest.address
+    - if category.guests.cait.size == 0
+      %li None
+  %h4 Groom
+  %ul.guests
+    - category.guests.chris.each do |guest|
+      %li
+        = link_to "#{guest.number_display} - #{guest.name}", guest
+        %address
+          %pre= guest.address
+    - if category.guests.chris.size == 0
+      %li None
+- if @guests.size > 0
+  %h4 Uncategorized
+  %ul.guests
+    - @guests.each do |guest|
+      %li= link_to guest.name, guest
     

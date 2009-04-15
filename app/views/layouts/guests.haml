@@ -1,0 +1,12 @@
+!!!
+%xhtml
+  %head
+    %title Admin - Chris and Cait - Wedding Site
+  %body
+    %h1 Chris and Cait
+    %h2 Admin
+    %ul
+      %li= link_to "Guest List", guests_url
+      %li= link_to "New Guest", new_guest_url
+      %li= link_to "New Category", new_category_url
+    = yield

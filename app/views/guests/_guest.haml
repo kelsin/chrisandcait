@@ -1,0 +1,16 @@
+%div[@guest]
+  %h2= @guest.name
+  %address<= @guest.address
+  %p
+    == Guest of the #{@guest.side}
+    = ", #{@guest.category.name}" if @guest.category
+  %p
+    == #{guest.number_display}
+    %em== (#{@guest.number_actual_display} confirmed / #{@guest.number_estimate_display} estimated)
+  %p
+    Sent Thank You:
+    = if @guest.sent_thank_you then "Yes" else "No" end
+  %ul
+    %li=link_to "Edit", edit_guest_url(@guest)
+    %li=link_to "Delete", guest_url(@guest), :method => :delete, :confirm => "Are you sure you want to delete #{@guest.name}?"
+  
