@@ -39,5 +39,5 @@ production:
   database: chrisandcait
   username: kelsin
   password: kelsey
-  host: mysql.chrisandcait.com
+  host: 127.0.0.1
 
