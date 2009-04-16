@@ -20,7 +20,7 @@ development:
   database: chrisandcait_dev
   username: kelsin
   password: kelsey
-  host: mysql.chrisandcait.com
+  host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -31,7 +31,7 @@ test:
   database: chrisandcait_test
   username: kelsin
   password: kelsey
-  host: mysql.chrisandcait.com
+  host: 127.0.0.1
 
 production:
   adapter: mysql
