@@ -1,5 +1,4 @@
 log/*.log
-db/schema.rb
 tmp/*
 doc/app
 doc/api
