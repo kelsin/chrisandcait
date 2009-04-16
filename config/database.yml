@@ -17,7 +17,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: chrisandcait
+  database: chrisandcait_dev
   username: kelsin
   password: kelsey
   host: mysql.chrisandcait.com
