@@ -5,8 +5,8 @@ class GuestsController < ApplicationController
     before_filter :authenticate
     
     def index
-        @categories = Category.find(:all, :order => "name")
-        @guests = Guest.find(:all, :order => "name", :conditions => ["category_id is null"])
+        @categories = Category.find(:all, :order => "categories.name")
+        @guests = Guest.find(:all, :order => "guests.name", :conditions => ["category_id is null"])
 
       respond_to do |format|
         format.html
