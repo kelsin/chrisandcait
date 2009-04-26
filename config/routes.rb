@@ -10,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :guests, :path_prefix => '/admin'
   map.resources :categories, :path_prefix => '/admin'
-  map.resources :songs, :path_prefix => '/admin'
+  map.resources :songs, :member => { :up => :post, :down => :post }, :path_prefix => '/admin'
   map.resources :rsvp
 
   map.connect ':controller/:action/:id'

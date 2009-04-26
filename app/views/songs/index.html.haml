@@ -1,0 +1,16 @@
+%h2 Songs
+%ul.songs
+  - @songs.each do |song|
+    %li[song]
+      %span.position= song.position
+      %span.name= song.name
+      %span.artist= song.artist
+      - if song.role
+        %span.role= song.role
+      = link_to "Edit", edit_song_url(song)
+      = link_to "Up", up_song_url(song), :method => :post
+      = link_to "Down", down_song_url(song), :method => :post
+%h3 New Song
+%div[@new_song]
+  - form_for @new_song do |form|
+    = render form

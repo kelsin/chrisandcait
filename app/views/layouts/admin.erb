@@ -15,6 +15,7 @@
         <li><%= link_to 'CSV', formatted_guests_url(:csv) %></li>
         <li<%= " class=\"you-are-here\"" if current_page?(new_guest_url) %>><%= link_to 'New Guest', new_guest_url %></li>
         <li<%= " class=\"you-are-here\"" if current_page?(new_category_url) %>><%= link_to 'New Category', new_category_url %></li>
+        <li<%= " class=\"you-are-here\"" if current_page?(songs_url) %>><%= link_to 'Songs', songs_url %></li>
         <li><%= link_to 'Main Site', root_url %></li>
     </ul>
     <div id="content">
