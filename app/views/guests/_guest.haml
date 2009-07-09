@@ -7,9 +7,13 @@
   %p
     == #{guest.number_display}
     %em== (#{@guest.number_actual_display} confirmed / #{@guest.number_estimate_display} estimated)
-  %p
-    Sent Thank You:
-    = if @guest.sent_thank_you then "Yes" else "No" end
+  - unless @guest.present_description.blank?
+    %p
+      Present Description:
+      = @guest.present_description
+    %p
+      Sent Thank You:
+      = if @guest.sent_thank_you then "Yes" else "No" end
   - if @guest.rsvp_key
     %p
       RSVP Key:

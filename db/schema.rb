@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090709225414) do
+ActiveRecord::Schema.define(:version => 20090709231437) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20090709225414) do
     t.boolean  "bride"
     t.integer  "number_estimate"
     t.integer  "category_id"
+    t.text     "present_description"
   end
 
   create_table "songs", :force => true do |t|
