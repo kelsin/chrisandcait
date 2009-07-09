@@ -5,7 +5,7 @@
   %ul.guests
     - category.guests.cait.each do |guest|
       %li
-        = link_to "#{guest.name}", guest
+        = link_to guest.name, guest
         - if guest.rsvp_key
           %spam.rsvp
             = guest.rsvp_key
@@ -17,7 +17,10 @@
   %ul.guests
     - category.guests.chris.each do |guest|
       %li
-        = link_to "#{guest.number_display} - #{guest.name}", guest
+        = link_to guest.name, guest
+        - if guest.rsvp_key
+          %spam.rsvp
+            = guest.rsvp_key
         %address
           %pre= guest.address
     - if category.guests.chris.size == 0
