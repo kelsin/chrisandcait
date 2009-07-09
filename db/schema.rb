@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090425160646) do
+ActiveRecord::Schema.define(:version => 20090709225414) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20090425160646) do
     t.integer  "number"
     t.string   "name"
     t.text     "address"
-    t.string   "key"
+    t.string   "rsvp_key"
     t.boolean  "attending"
     t.datetime "created_at"
     t.datetime "updated_at"

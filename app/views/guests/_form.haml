@@ -23,4 +23,7 @@
     = f.label :sent_thank_you
     = f.check_box :sent_thank_you
   %p
+    = f.label :rsvp_key, 'RSVP Key'
+    = f.text_field :rsvp_key, :size => 6
+  %p
     = submit_tag (if form.id then "Edit Guest" else "Create Guest" end)

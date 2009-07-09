@@ -10,6 +10,10 @@
   %p
     Sent Thank You:
     = if @guest.sent_thank_you then "Yes" else "No" end
+  - if @guest.rsvp_key
+    %p
+      RSVP Key:
+      = @guest.rsvp_key
   %ul
     %li=link_to "Edit", edit_guest_url(@guest)
     %li=link_to "Delete", guest_url(@guest), :method => :delete, :confirm => "Are you sure you want to delete #{@guest.name}?"

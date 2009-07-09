@@ -14,7 +14,7 @@ class GuestsController < ApplicationController
       format.csv {
         report = StringIO.new
         CSV::Writer.generate(report, ',') do |csv|
-          csv << ['Id', 'Category', 'Guest Of', 'Name', 'Address 1', 'Address 2', 'Address 3', 'Address 4', 'Actual Number', 'Estimated Number', 'Sent Thank You']
+          csv << ['Id', 'Category', 'Guest Of', 'Name', 'Address 1', 'Address 2', 'Address 3', 'Address 4', 'RSVP Key', 'Actual Number', 'Estimated Number', 'Sent Thank You']
           @categories.each do |category|
             category.guests.each do |guest|
               address = guest.address.strip.split("\n")
@@ -26,6 +26,7 @@ class GuestsController < ApplicationController
                       address[1],
                       address[2],
                       address[3],
+                      guest.rsvp_key,
                       guest.number_actual_display,
                       guest.number_estimate_display,
                       if guest.sent_thank_you then "Yes" else "No" end]
