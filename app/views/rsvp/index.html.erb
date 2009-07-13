@@ -1,2 +1,16 @@
 <h2>RSVP</h2>
-<p>The RSVP page will be available once invitations have been mailed out!</p>
+
+<p>You can enter your RSVP number (written on your invitation) below to
+rsvp. You may also call Chris (phone number on the invitation) to RSVP as
+well. Thanks!</p>
+
+<% if flash[:error] %>
+  <p><strong>Error</strong>: <%= flash[:error] %></p>
+<% end %>
+
+<% form_tag rsvp_index_url do |form| %>
+  <p>
+    <%= text_field_tag :key %>
+    <%= submit_tag 'Lookup RSVP' %>
+  </p>
+<% end %>

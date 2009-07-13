@@ -198,3 +198,11 @@ ul#nav li a:hover {
 }
 
 spam.rsvp { background-color: #0e3e5c; color: #fff; padding: 0 1em; }
+
+#recaptcha_widget_div {
+    padding: 0 20px;
+}
+
+span.error {
+    color: #f00;
+}

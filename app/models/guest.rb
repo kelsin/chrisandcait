@@ -26,7 +26,17 @@ class Guest < ActiveRecord::Base
     number_estimate || 0
   end
 
+  def cake_numbers_valid?
+    (self.num_carrot + self.num_chocolate + self.num_vanilla + self.num_cheese) == self.number
+  end
+
+  def name_check_valid?(str)
+    return false if str.blank? || str.length <= 3
+
+    self.name.gsub(/and Guest/, '').strip =~ Regexp.new(Regexp.quote(str.strip), true)
+  end
+
   def empty_rsvp_keys_to_nil
-    self.rsvp_key = nil if self.rsvp_key.empty?
+    self.rsvp_key = nil if self.rsvp_key.blank?
   end
 end

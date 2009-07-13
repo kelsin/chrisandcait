@@ -1,0 +1,33 @@
+<h2>RSVP</h2>
+
+<p>Please fill out the form below.</p>
+
+<% unless @guest.errors.empty? %>
+  <% @guest.errors.each do |attr,error| %>
+    <p><span class="error">Error</span>: <%= error %></p>
+  <% end %>
+<% end %>
+
+<% form_for @guest, :url => rsvp_url(@guest) do |form| %>
+  <p>
+    <%= form.label :number, 'Number of people attending:' %>
+    <%= form.text_field :number, :size => 6 %> / <%= @guest.number_estimate %>
+  </p>
+  <p>
+    Number of cake servings:<br />
+    <%= form.text_field :num_vanilla, :size => 3 %> Vanilla Cake with Marshmellow Fondant<br />
+    <%= form.text_field :num_chocolate, :size => 3 %> Chocolate Cake<br />
+    <%= form.text_field :num_cheese, :size => 3 %> Cheese Cake<br />
+    <%= form.text_field :num_carrot, :size => 3 %> Carrot Cake
+  </p>
+  <p>
+    For security reasons can you please type your last name (as written on the invitation):<br />
+    <%= text_field_tag :name_check, @name_check %>
+  </p>
+  <p>
+    If you have any special needs or requests:<br />
+    <%= form.text_area :rsvp_note, :rows => 6 %>
+  </p>
+  <p><%= recaptcha_tags %></p>
+  <p><%= submit_tag 'RSVP' %></p>
+<% end %>
