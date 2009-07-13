@@ -6,6 +6,7 @@ well. Thanks!</p>
 
 <% if flash[:error] %>
   <p><strong>Error</strong>: <%= flash[:error] %></p>
+  <% flash.discard %>
 <% end %>
 
 <% form_tag rsvp_index_url do |form| %>
