@@ -18,7 +18,7 @@ Rails::Initializer.run do |config|
 
   # Skip frameworks you're not going to use. To use Rails without a database
   # you must remove the Active Record framework.
-  config.frameworks -= [ :active_resource ]
+  # config.frameworks -= [ :active_resource ]
 
   # Specify gems that this application depends on. 
   # They can then be installed with "rake gems:install" on new installations.
@@ -71,10 +71,4 @@ Haml::Template.options[:preserve] = ['textarea', 'pre', 'address']
 ENV['RECAPTCHA_PUBLIC_KEY'] = '6Lf3TwcAAAAAAIFA8OxiYLRniKjprX-I86FDHsnQ'
 ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lf3TwcAAAAAAGUJa-uexpgBpj8IskhrtOsCJb7v'
 
-ActionMailer::Base.smtp_settings = {
-  :address        => 'localhost', # default: localhost
-  :port           => '25',                  # default: 25
-  :user_name      => 'kelsin',
-  :password       => 'kelsey13',
-  :authentication => :plain                 # :plain, :login or :cram_md5
-}
+ActionMailer::Base.smtp_settings = { :domain => 'chrisandcait.com', :user_name => 'kelsin', :password => 'kelsey13', :authentication => :plain }

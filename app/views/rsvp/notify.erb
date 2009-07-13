@@ -1,6 +1,6 @@
 A new rsvp from received for: <%= @guest.name %>
 
-Submitted: <%= @guest.rsvp_on %>
+Submitted: <%= @guest.rsvp_on.in_time_zone('America/New_York') %>
 
 Number Attending: <%= @guest.number %>
 
