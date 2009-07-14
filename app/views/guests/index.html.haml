@@ -1,6 +1,6 @@
-%h2== Guests (#{Category.number}) - #{Guest.count} invitations
+%h2== Guests - #{Guest.count} invitations
 - @categories.each do |category|
-  %h3== #{category.name} (#{category.number})
+  %h3= category.name
   %h4 Bride
   %ul.guests
     - category.guests.cait.each do |guest|
