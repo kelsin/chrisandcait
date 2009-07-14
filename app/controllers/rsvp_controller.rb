@@ -27,8 +27,18 @@ class RsvpController < ApplicationController
     @name_check = params[:name_check]
 
     @guest.update_attributes(params[:guest])
+    
+    if params[:rsvp_answer] == 'false'
+      @guest.number = 0
+      @guest.num_carrot = 0
+      @guest.num_chocolate = 0
+      @guest.num_vanilla = 0
+      @guest.num_cheese = 0
+    end
 
     @guest.errors.add_to_base 'Please select one cake serving for each guest attending' unless @guest.cake_numbers_valid?
+
+    @guest.errors.add_to_base 'Please call Chris (cell number on the invitation) if you would like to bring more guests than invited' unless @guest.number <= @guest.number_estimate
 
     @guest.errors.add_to_base 'Name provided did not match invitation' unless @guest.name_check_valid?(@name_check)
 
