@@ -27,7 +27,9 @@ class RsvpController < ApplicationController
     @name_check = params[:name_check]
 
     @guest.update_attributes(params[:guest])
-    
+
+    @guest.number ||= 0
+
     if params[:rsvp_answer] == 'false'
       @guest.number = 0
       @guest.num_carrot = 0
@@ -35,6 +37,8 @@ class RsvpController < ApplicationController
       @guest.num_vanilla = 0
       @guest.num_cheese = 0
     end
+
+    @guest.errors.add_to_base 'Please select "No I cannot attend" instead of saying 0 people are going to attend' if params[:rsvp_answer] == 'true' && @guest.number == 0
 
     @guest.errors.add_to_base 'Please select one cake serving for each guest attending' unless @guest.cake_numbers_valid?
 
