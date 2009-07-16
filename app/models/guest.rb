@@ -31,19 +31,19 @@ class Guest < ActiveRecord::Base
   end
 
   def num_carrot
-    read_attribute(:num_carrot) || 0
+    read_attribute(:num_carrot).to_i || 0
   end
 
   def num_chocolate
-    read_attribute(:num_chocolate) || 0
+    read_attribute(:num_chocolate).to_i || 0
   end
 
   def num_vanilla
-    read_attribute(:num_vanilla) || 0
+    read_attribute(:num_vanilla).to_i || 0
   end
 
   def num_cheese
-    read_attribute(:num_cheese) || 0
+    read_attribute(:num_cheese).to_i || 0
   end
 
   def name_check_valid?(str)
