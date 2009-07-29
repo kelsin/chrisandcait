@@ -4,7 +4,7 @@ class RsvpController < ApplicationController
 
   def create
     @guest = Guest.find_by_rsvp_key(params[:key])
-    
+
     if @guest
       redirect_to rsvp_url(@guest)
     else
@@ -16,7 +16,7 @@ class RsvpController < ApplicationController
   def show
     @guest = Guest.find(params[:id])
     @name_check = ''
-    
+
     respond_to do |format|
       format.html
     end
@@ -26,7 +26,7 @@ class RsvpController < ApplicationController
     @guest = Guest.find(params[:id])
     @name_check = params[:name_check]
 
-    @guest.update_attributes(params[:guest])
+    @guest.attributes= params[:guest]
 
     @guest.number ||= 0
 
