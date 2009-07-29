@@ -27,7 +27,7 @@ class Guest < ActiveRecord::Base
   end
 
   def cake_numbers_valid?
-    (self.num_carrot + self.num_chocolate + self.num_vanilla + self.num_cheese) == self.number
+    (self.num_carrot + self.num_chocolate + self.num_vanilla + self.num_cheese) <= self.number
   end
 
   def num_carrot
