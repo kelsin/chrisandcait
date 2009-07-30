@@ -49,7 +49,7 @@ class Guest < ActiveRecord::Base
   def name_check_valid?(str)
     return false if str.blank? || str.length <= 3
 
-    self.name.gsub(/guest/i, '').gsub(/and/i, '').gsub(/\&/i, '').strip =~ Regexp.new(Regexp.quote(str.strip), true)
+    self.name.gsub(/guest/i, '').gsub(/\ and\ /i, ' ').gsub(/\&/i, '').strip =~ Regexp.new(Regexp.quote(str.strip), true)
   end
 
   def empty_rsvp_keys_to_nil
