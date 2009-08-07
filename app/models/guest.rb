@@ -24,7 +24,7 @@ class Guest < ActiveRecord::Base
   end
 
   def rsvp?
-    !rsvp_on.nil? or number == 0
+    !number.nil?
   end
 
   def coming?
