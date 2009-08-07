@@ -3,10 +3,10 @@ require 'csv'
 class GuestsController < ApplicationController
   layout "admin"
   before_filter :authenticate
-  
+
   def index
+    @guests = Guest.all(:include => :category, :order => "categories.name, guests.name")
     @categories = Category.find(:all, :order => "categories.name")
-    @guests = Guest.find(:all, :order => "guests.name", :conditions => ["category_id is null"])
 
     respond_to do |format|
       format.html
@@ -54,19 +54,19 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(params[:guest])
     @guest.save
-    
+
     redirect_to :action => :show, :id => @guest.id
   end
-  
+
   def update
     @guest = Guest.update(params[:id], params[:guest])
-    
+
     redirect_to :action => :show, :id => @guest.id
   end
-  
+
   def destroy
     Guest.destroy(params[:id])
-    
+
     redirect_to :action => :index
   end
 end

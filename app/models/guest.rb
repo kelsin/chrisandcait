@@ -6,6 +6,31 @@ class Guest < ActiveRecord::Base
 
   before_save :empty_rsvp_keys_to_nil
 
+  named_scope :rsvp_yes, { :conditions => 'rsvp_on is not null and number > 0' }
+  named_scope :rsvp_no, { :conditions => 'rsvp_on is not null and number = 0' }
+  named_scope :did_not_rsvp, { :conditions => 'rsvp_on is null' }
+
+  # Class Methods
+  def self.number_coming
+    self.rsvp_yes.sum(:number)
+  end
+
+  def self.number_not_coming
+    self.rsvp_no.sum(:number_estimate).to_i + self.rsvp_yes.sum('number_estimate - number').to_i
+  end
+
+  def self.number_might_come
+    self.did_not_rsvp.sum(:number_estimate)
+  end
+
+  def rsvp?
+    !rsvp_on.nil?
+  end
+
+  def coming?
+    !number.nil? and number > 0
+  end
+
   def side
     if bride
       "Bride"

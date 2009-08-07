@@ -7,95 +7,95 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 body {
-	line-height: 1;
-	background: #0e3e5c none;
+    line-height: 1;
+    background: #0e3e5c none;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 
 /* remember to define focus styles! */
 :focus {
-	outline: 0;
+    outline: 0;
 }
 
 /* remember to highlight inserts somehow! */
 ins {
-	text-decoration: none;
+    text-decoration: none;
 }
 del {
-	text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 /* tables still need 'cellspacing="0"' in the markup */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* wrappers and whatnots */
 
 ul {
-	margin: 1em 0;
+    margin: 1em 0;
 }
 
 p {
-	margin: 1em 0;
+    margin: 1em 0;
 }
 
 #outer-wrapper {
-	width: 604px;
-	margin: 0 auto;
-	color: #0e3e5c;
+    width: 604px;
+    margin: 0 auto;
+    color: #0e3e5c;
 }
 
 #sidebar {
-	width: 160px;
-	margin-top: -100px;
-	float: left;
+    width: 160px;
+    margin-top: -100px;
+    float: left;
 }
 
 #content {
-	width: 604px;
-	background: #bedef2 url(/images/rounded-sides.gif) left top repeat-y;
-	font-size: 13px;
-	font-family: georgia, times new roman, serif;
-	line-height: 1.4;
-	margin: 0 auto;
-	clear: both;
+    width: 604px;
+    background: #bedef2 url(/images/rounded-sides.gif) left top repeat-y;
+    font-size: 13px;
+    font-family: georgia, times new roman, serif;
+    line-height: 1.4;
+    margin: 0 auto;
+    clear: both;
 }
 
 #content h2 {
-	background: transparent url(/images/rounded-top.gif) left top no-repeat;
-	padding: 20px 20px 5px 20px;
-	font-size: 20px;
+    background: transparent url(/images/rounded-top.gif) left top no-repeat;
+    padding: 20px 20px 5px 20px;
+    font-size: 20px;
 }
 
 #content div.bottom {
-	height: 27px;
-	background: transparent url(/images/rounded-bottom.gif) left bottom no-repeat;
+    height: 27px;
+    background: transparent url(/images/rounded-bottom.gif) left bottom no-repeat;
 }
 
-#content h3, #content h4, #content h5, #content p, #content object, #content address, #content ul {
-	padding: 0 20px;
-	margin: 10px 0 0 0;
+#content h3, #content h4, #content h5, #content h6, #content p, #content object, #content address, #content ul {
+    padding: 0 20px;
+    margin: 10px 0 0 0;
 }
 
 #content address {
@@ -105,99 +105,101 @@ p {
 }
 
 #content ul.guests {
-	margin: 0 0 1em 0;
+    margin: 0 0 1em 0;
 }
 
-#content h3 {
-	font-size: 16px;
-}
+#content h3 { font-size: 16px; }
+#content h4 { font-size: 14px; }
+#content h5 { font-size: 12px; }
+#content h6 { font-size: 10px; }
 
 #content a {
-	color: #248CCE;
-	font-weight: bold;
+    color: #248CCE;
+    font-weight: bold;
 }
 
 #content a:hover {
-	color: #ff9c00;
+    color: #ff9c00;
 }
 
 #content div#map {
-	padding: 0 0 20px 20px;
+    padding: 0 0 20px 20px;
 }
 
 #footer {
-	text-align: right;
-	font: normal normal normal 50px georgia, times new roman, serif;
-	color: #fff;
-	background: transparent url(/images/flower.gif) left bottom no-repeat;
-	height: 127px;
-	width: 604px;
-	margin: 15px auto 0;
+    text-align: right;
+    font: normal normal normal 50px georgia, times new roman, serif;
+    color: #fff;
+    background: transparent url(/images/flower.gif) left bottom no-repeat;
+    height: 127px;
+    width: 604px;
+    margin: 15px auto 0;
 }
 
 #footer p {
-	padding: 20px 0 0 0;
-	margin: 0;
+    padding: 20px 0 0 0;
+    margin: 0;
 }
 
 #footer p span {
-	color: #248cce;
+    color: #248cce;
 }
 
 /* header */
 
 #header {
-	margin-top: 15px;
+    margin-top: 15px;
 }
 
 #header h1 {
-	font-size: 55px;
-	font-family: georgia, times new roman, serif;
-	font-weight: normal;
-	margin: 0 auto;
-	color: #fff;
-	width: 468px;
-	height: 200px;
-	background: transparent url(/images/chrisandcait.gif) left top no-repeat;
-	text-indent: -9999px;
+    font-size: 55px;
+    font-family: georgia, times new roman, serif;
+    font-weight: normal;
+    margin: 0 auto;
+    color: #fff;
+    width: 468px;
+    height: 200px;
+    background: transparent url(/images/chrisandcait.gif) left top no-repeat;
+    text-indent: -9999px;
 }
 
 /* nav */
 
 ul#nav {
-	padding: 0 0 0 40px;
-	margin: 0;
-	font-family: georgia, times new roman, serif;
-	font-size: 17px;
-	background: transparent url(/images/flowers.gif) left top no-repeat;
-	height: 45px;
+    padding: 0 0 0 40px;
+    margin: 0;
+    font-family: georgia, times new roman, serif;
+    font-size: 17px;
+    background: transparent url(/images/flowers.gif) left top no-repeat;
+    height: 45px;
 }
 
 ul#nav li {
-	float: left;
-	height: 45px;
-	line-height: 26px;
-	margin-right: 15px;
+    float: left;
+    height: 45px;
+    line-height: 26px;
+    margin-right: 15px;
 }
 
 ul#nav li a {
-	color: #248cce;
-	text-decoration: none;
+    color: #248cce;
+    text-decoration: none;
 }
 
 ul#nav li.you-are-here a {
-	color: #fff;
+    color: #fff;
 }
 
 ul#nav li.you-are-here {
-	background: transparent url(/images/here.gif) center bottom no-repeat;
+    background: transparent url(/images/here.gif) center bottom no-repeat;
 }
 
 ul#nav li a:hover {
-	color: #ff9c00;
+    color: #ff9c00;
 }
 
-spam.rsvp { background-color: #0e3e5c; color: #fff; padding: 0 1em; }
+span.rsvp { background-color: #0e3e5c; color: #fff; padding: 0 1em; }
+span.number { background-color: #0e3e5c; color: #fff; padding: 0 1em; }
 
 #recaptcha_widget_div {
     padding: 0 20px;

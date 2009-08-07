@@ -1,33 +1,33 @@
 %h2== Guests - #{Guest.count} invitations
-- @categories.each do |category|
-  %h3= category.name
-  %h4 Bride
-  %ul.guests
-    - category.guests.cait.each do |guest|
-      %li
-        = link_to guest.name, guest
-        - if guest.rsvp_key
-          %spam.rsvp
-            = guest.rsvp_key
-        %address
-          %pre= guest.address
-    - if category.guests.cait.size == 0
-      %li None
-  %h4 Groom
-  %ul.guests
-    - category.guests.chris.each do |guest|
-      %li
-        = link_to guest.name, guest
-        - if guest.rsvp_key
-          %spam.rsvp
-            = guest.rsvp_key
-        %address
-          %pre= guest.address
-    - if category.guests.chris.size == 0
-      %li None
-- if @guests.size > 0
-  %h4 Uncategorized
-  %ul.guests
-    - @guests.each do |guest|
-      %li= link_to guest.name, guest
-    
+
+%h3 Stats
+%p== #{Guest.number_coming} people coming
+%p== #{Guest.number_not_coming} people not coming
+%p== #{Guest.number_might_come} people that still might come
+%p== Our wedding will have between #{Guest.number_coming} and #{Guest.number_coming + Guest.number_might_come} guests
+%p== #{Guest.sum(:num_carrot)} Carrot
+%p== #{Guest.sum(:num_chocolate)} Chocolate
+%p== #{Guest.sum(:num_vanilla)} Vanilla
+%p== #{Guest.sum(:num_cheese)} Cheese
+
+- @guests.group_by(&:rsvp?).each do |rsvp, rsvps|
+  %h3= "#{rsvp ? 'Did' : 'Did Not'} RSVP"
+  - rsvps.group_by(&:coming?).each do |coming, comings|
+    - if rsvp
+      %h4= "#{coming ? '' : 'Not '}Coming"
+    - comings.group_by(&:category).each do |category, categories|
+      %h5= category.name
+      - categories.group_by(&:bride).each do |bride, guests|
+        %h6= bride ? 'Bride' : 'Groom'
+        %ul.guests
+          - guests.each do |guest|
+            %li
+              = link_to guest.name, guest
+              - if guest.number
+                %span.number
+                  = guest.number
+              - else
+                = "Up to #{guest.number_estimate}"
+              %address
+                %pre= guest.address
+
