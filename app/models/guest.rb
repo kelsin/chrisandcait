@@ -6,9 +6,9 @@ class Guest < ActiveRecord::Base
 
   before_save :empty_rsvp_keys_to_nil
 
-  named_scope :rsvp_yes, { :conditions => 'rsvp_on is not null and number > 0' }
-  named_scope :rsvp_no, { :conditions => 'rsvp_on is not null and number = 0' }
-  named_scope :did_not_rsvp, { :conditions => 'rsvp_on is null' }
+  named_scope :rsvp_yes, { :conditions => 'number > 0' }
+  named_scope :rsvp_no, { :conditions => 'number = 0' }
+  named_scope :did_not_rsvp, { :conditions => 'number is null' }
 
   # Class Methods
   def self.number_coming
