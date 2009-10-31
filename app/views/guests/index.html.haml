@@ -23,11 +23,9 @@
           - guests.each do |guest|
             %li
               = link_to guest.name, guest
-              - if guest.number
-                %span.number
-                  = guest.number
-              - else
-                = "Up to #{guest.number_estimate}"
+              - if guest.sent_thank_you 
+                %span.number Done
               %address
                 %pre= guest.address
+
 
