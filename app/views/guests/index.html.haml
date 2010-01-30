@@ -23,9 +23,9 @@
           - guests.each do |guest|
             %li
               = link_to guest.name, guest
-              - if guest.sent_thank_you 
+              - if guest.sent_thank_you
                 %span.number Done
+              - elsif (not guest.needs_card?)
+                %span.number Not Needed
               %address
                 %pre= guest.address
-
-

@@ -31,6 +31,10 @@ class Guest < ActiveRecord::Base
     !number.nil? and number > 0
   end
 
+  def needs_card?
+    self.coming? or (not self.present_description.blank?)
+  end
+
   def side
     if bride
       "Bride"
