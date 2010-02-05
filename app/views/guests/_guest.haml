@@ -11,10 +11,13 @@
     %p
       Present Description:
       = @guest.present_description
+  - if @guest.needs_card?
     %p
       Sent Thank You:
       = if @guest.sent_thank_you then "Yes" else "No" end
-
+    %p
+      Card Stamped?
+      = if @guest.stamped? then "Yes" else "No" end
   - if @guest.rsvp_key
     %p
       RSVP Key:

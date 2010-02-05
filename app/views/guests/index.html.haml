@@ -22,7 +22,7 @@
         %ul.guests
           - guests.each do |guest|
             %li
-              = link_to guest.name, guest
+              = link_to(guest.stamped? ? "<del>#{guest.name}</del>" : guest.name, guest)
               - if guest.sent_thank_you
                 %span.number Done
               - elsif (not guest.needs_card?)

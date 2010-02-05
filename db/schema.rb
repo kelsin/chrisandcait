@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090713030921) do
+ActiveRecord::Schema.define(:version => 20100205000245) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20090713030921) do
     t.integer  "num_vanilla",         :default => 0, :null => false
     t.text     "rsvp_note"
     t.datetime "rsvp_on"
+    t.boolean  "stamped_p"
   end
 
   create_table "songs", :force => true do |t|

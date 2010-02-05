@@ -81,6 +81,10 @@ class Guest < ActiveRecord::Base
     self.name.gsub(/guest/i, '').gsub(/\ and\ /i, ' ').gsub(/\&/i, '').strip =~ Regexp.new(Regexp.quote(str.strip), true)
   end
 
+  def stamped?
+    self.stamped_p
+  end
+
   def empty_rsvp_keys_to_nil
     self.rsvp_key = nil if self.rsvp_key.blank?
   end
