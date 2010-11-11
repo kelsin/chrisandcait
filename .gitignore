@@ -2,4 +2,5 @@ log/*.log
 tmp/*
 doc/app
 doc/api
+.bundle
 
