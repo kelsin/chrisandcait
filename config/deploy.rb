@@ -1,3 +1,5 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require "rvm/capistrano"
 require 'bundler/capistrano'
 
 set :application, "chrisandcait"
@@ -14,6 +16,9 @@ set :scm, :git
 set :repository,  "kelsin@www.chrisandcait.com:~/repos/chrisandcait.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
+
+set :rvm_ruby_string, 'ree-1.8.7@chrisandcait'
+set :rvm_type, :user
 
 set :use_sudo, false
 set :user, 'kelsin'
