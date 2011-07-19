@@ -12,7 +12,6 @@ GEM
       activesupport (= 2.3.12)
     activesupport (2.3.12)
     haml (3.1.2)
-    mysql (2.8.1)
     rack (1.1.2)
     rails (2.3.12)
       actionmailer (= 2.3.12)
@@ -28,5 +27,4 @@ PLATFORMS
 
 DEPENDENCIES
   haml
-  mysql
   rails (= 2.3.12)
