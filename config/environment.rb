@@ -2,6 +2,7 @@
 
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
+ENV['RAILS_ENV'] ||= ENV['RACK_ENV']
 ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
@@ -49,7 +50,7 @@ Rails::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_chrisandcait.com_session',
-    :secret      => '06dc02ed95f59a1025fa29288b677d1d1bbf1373361b0377a78a51471b14ebc145b0a8cd36dd85682389e9fbe11df0dee844e9091dd15d824d18988e607f440b'
+    :secret      => ENV['COOKIE_SECRET']
   }
 
   # Use the database for sessions instead of the cookie-based default,
@@ -68,7 +69,12 @@ end
 
 Haml::Template.options[:preserve] = ['textarea', 'pre', 'address']
 
-ENV['RECAPTCHA_PUBLIC_KEY'] = '6Lf3TwcAAAAAAIFA8OxiYLRniKjprX-I86FDHsnQ'
-ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lf3TwcAAAAAAGUJa-uexpgBpj8IskhrtOsCJb7v'
-
-ActionMailer::Base.smtp_settings = { :domain => 'chrisandcait.com', :user_name => 'kelsin', :password => 'kelsey13', :authentication => :plain }
+ActionMailer::Base.smtp_settings = {
+  :port           => '25',
+  :address        => ENV['POSTMARK_SMTP_SERVER'],
+  :user_name      => ENV['POSTMARK_API_KEY'],
+  :password       => ENV['POSTMARK_API_KEY'],
+  :domain         => 'yourapp.heroku.com',
+  :authentication => :plain,
+}
+ActionMailer::Base.delivery_method = :smtp
