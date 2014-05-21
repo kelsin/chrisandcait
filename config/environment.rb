@@ -78,3 +78,9 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
 }
 ActionMailer::Base.delivery_method = :smtp
+
+Rails::Initializer.run do |config|
+  config.middleware.use OmniAuth::Builder do
+    provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
+  end
+end

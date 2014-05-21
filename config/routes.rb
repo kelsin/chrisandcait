@@ -6,6 +6,10 @@ ActionController::Routing::Routes.draw do |map|
   map.chriscait 'chriscait', :controller => "pages", :action => "chriscait"
   map.registries 'registries', :controller => "pages", :action => "registries"
 
+  # OAuth Callback
+  map.connect '/auth/facebook/callback', :controller => 'oauth', :action => 'facebook'
+  map.connect '/logout', :controller => 'oauth', :action => 'logout'
+
   map.admin 'admin', :controller => "guests", :action => "index"
 
   map.resources :guests, :path_prefix => '/admin'
