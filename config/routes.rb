@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   # OAuth Callback
   map.connect '/auth/facebook/callback', :controller => 'oauth', :action => 'facebook'
   map.connect '/logout', :controller => 'oauth', :action => 'logout'
+  map.connect '/login', :controller => 'oauth', :action => 'login'
 
   map.admin 'admin', :controller => "guests", :action => "index"
 

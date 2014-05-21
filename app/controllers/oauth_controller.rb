@@ -6,6 +6,10 @@ class OauthController < ApplicationController
     redirect_to "/admin"
   end
 
+  def login
+    redirect_to '/auth/facebook'
+  end
+
   def logout
     session[:user_id] = nil
     session[:user_email] = nil
