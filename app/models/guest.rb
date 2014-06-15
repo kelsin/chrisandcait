@@ -55,10 +55,6 @@ class Guest < ActiveRecord::Base
     number_estimate || 0
   end
 
-  def cake_numbers_valid?
-    (self.num_carrot + self.num_chocolate + self.num_vanilla + self.num_cheese) <= self.number
-  end
-
   def name_check_valid?(str)
     return false if str.blank? || str.length <= 3
 
