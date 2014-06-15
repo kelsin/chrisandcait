@@ -4,4 +4,5 @@ doc/app
 doc/api
 .bundle
 db/*.sqlite3
+.env
 
