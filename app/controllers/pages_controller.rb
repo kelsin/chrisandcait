@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     def engagement
     end
     
-    def chriscait
+    def alananderin
     end
     
     def registries

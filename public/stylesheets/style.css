@@ -17,7 +17,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 body {
     line-height: 1;
-    background: #0e3e5c none;
+    background: #ae1f25 none;
 }
 ol, ul {
     list-style: none;
@@ -63,7 +63,7 @@ p {
 #outer-wrapper {
     width: 604px;
     margin: 0 auto;
-    color: #0e3e5c;
+    color: #fff;
 }
 
 #sidebar {
@@ -74,23 +74,16 @@ p {
 
 #content {
     width: 604px;
-    background: #bedef2 url(/images/rounded-sides.gif) left top repeat-y;
     font-size: 13px;
-    font-family: georgia, times new roman, serif;
+    font-family: lato, serif;
     line-height: 1.4;
     margin: 0 auto;
     clear: both;
 }
 
 #content h2 {
-    background: transparent url(/images/rounded-top.gif) left top no-repeat;
     padding: 20px 20px 5px 20px;
     font-size: 20px;
-}
-
-#content div.bottom {
-    height: 27px;
-    background: transparent url(/images/rounded-bottom.gif) left bottom no-repeat;
 }
 
 #content h3, #content h4, #content h5, #content h6, #content p, #content object, #content address, #content ul {
@@ -114,12 +107,12 @@ p {
 #content h6 { font-size: 10px; }
 
 #content a {
-    color: #248CCE;
+    color: #ffbfc2;
     font-weight: bold;
 }
 
 #content a:hover {
-    color: #ff9c00;
+    color: #fff;
 }
 
 #content div#map {
@@ -128,9 +121,8 @@ p {
 
 #footer {
     text-align: right;
-    font: normal normal normal 50px georgia, times new roman, serif;
+    font: normal normal normal 50px lato, serif;
     color: #fff;
-    background: transparent url(/images/flower.gif) left bottom no-repeat;
     height: 127px;
     width: 604px;
     margin: 15px auto 0;
@@ -142,7 +134,7 @@ p {
 }
 
 #footer p span {
-    color: #248cce;
+    color: #fff;
 }
 
 /* header */
@@ -152,15 +144,11 @@ p {
 }
 
 #header h1 {
-    font-size: 55px;
-    font-family: georgia, times new roman, serif;
+    font-size: 160px;
+    font-family: Tangerine, sans-serif;
     font-weight: normal;
     margin: 0 auto;
     color: #fff;
-    width: 468px;
-    height: 200px;
-    background: transparent url(/images/chrisandcait.gif) left top no-repeat;
-    text-indent: -9999px;
 }
 
 /* nav */
@@ -168,9 +156,8 @@ p {
 ul#nav {
     padding: 0 0 0 40px;
     margin: 0;
-    font-family: georgia, times new roman, serif;
+    font-family: lato, serif;
     font-size: 17px;
-    background: transparent url(/images/flowers.gif) left top no-repeat;
     height: 45px;
 }
 
@@ -182,7 +169,7 @@ ul#nav li {
 }
 
 ul#nav li a {
-    color: #248cce;
+    color: #ffbfc2;
     text-decoration: none;
 }
 
@@ -190,16 +177,12 @@ ul#nav li.you-are-here a {
     color: #fff;
 }
 
-ul#nav li.you-are-here {
-    background: transparent url(/images/here.gif) center bottom no-repeat;
-}
-
 ul#nav li a:hover {
-    color: #ff9c00;
+    color: #fff;
 }
 
-span.rsvp { background-color: #0e3e5c; color: #fff; padding: 0 1em; }
-span.number { background-color: #0e3e5c; color: #fff; padding: 0 1em; }
+span.rsvp {color: #fff; padding: 0 1em; }
+span.number { color: #fff; padding: 0 1em; }
 
 #recaptcha_widget_div {
     padding: 0 20px;

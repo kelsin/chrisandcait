@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.location 'location', :controller => "pages", :action => "location"
   map.engagement 'engagement', :controller => "pages", :action => "engagement"
-  map.chriscait 'chriscait', :controller => "pages", :action => "chriscait"
+  map.alananderin 'alananderin', :controller => "pages", :action => "alananderin"
   map.registries 'registries', :controller => "pages", :action => "registries"
 
   # OAuth Callback
