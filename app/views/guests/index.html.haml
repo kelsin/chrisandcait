@@ -5,10 +5,6 @@
 %p== #{Guest.number_not_coming} people not coming
 %p== #{Guest.number_might_come} people that still might come
 %p== Our wedding will have between #{Guest.number_coming} and #{Guest.number_coming + Guest.number_might_come} guests
-%p== #{Guest.sum(:num_carrot)} Carrot
-%p== #{Guest.sum(:num_chocolate)} Chocolate
-%p== #{Guest.sum(:num_vanilla)} Vanilla
-%p== #{Guest.sum(:num_cheese)} Cheese
 
 - @guests.group_by(&:rsvp?).each do |rsvp, rsvps|
   %h3= "#{rsvp ? 'Did' : 'Did Not'} RSVP"

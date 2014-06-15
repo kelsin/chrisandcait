@@ -59,22 +59,6 @@ class Guest < ActiveRecord::Base
     (self.num_carrot + self.num_chocolate + self.num_vanilla + self.num_cheese) <= self.number
   end
 
-  def num_carrot
-    read_attribute(:num_carrot).to_i || 0
-  end
-
-  def num_chocolate
-    read_attribute(:num_chocolate).to_i || 0
-  end
-
-  def num_vanilla
-    read_attribute(:num_vanilla).to_i || 0
-  end
-
-  def num_cheese
-    read_attribute(:num_cheese).to_i || 0
-  end
-
   def name_check_valid?(str)
     return false if str.blank? || str.length <= 3
 
