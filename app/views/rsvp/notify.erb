@@ -4,11 +4,8 @@ Submitted: <%= @guest.rsvp_on.in_time_zone('America/New_York') %>
 
 Number Attending: <%= @guest.number %>
 
-Cakes:
-<%= @guest.num_carrot %> Carrot
-<%= @guest.num_cheese %> Cheese
-<%= @guest.num_vanilla %> Vanilla
-<%= @guest.num_chocolate %> Chocolate
+Dietary Restrictions:
+<%= @guest.dietary_restrictions %>
 
 Note:
 <%= @guest.rsvp_note %>

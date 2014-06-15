@@ -20,11 +20,8 @@
       <%= form.text_field :number, :size => 6 %> / <%= @guest.number_estimate %>
     </p>
     <p>
-      Number of cake servings:<br />
-      <%= form.text_field :num_vanilla, :size => 3 %> Vanilla Cake with Marshmellow Fondant<br />
-      <%= form.text_field :num_chocolate, :size => 3 %> Chocolate Cake<br />
-      <%= form.text_field :num_cheese, :size => 3 %> Cheese Cake<br />
-      <%= form.text_field :num_carrot, :size => 3 %> Carrot Cake
+      Dietary Restrictions:<br />
+      <%= form.text_area :dietary_restrictions, :rows => 3 %>
     </p>
   </div>
   <p>
