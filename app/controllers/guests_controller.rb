@@ -12,8 +12,7 @@ class GuestsController < ApplicationController
       format.html
       format.xml { render :xml => @categories.to_xml }
       format.csv {
-        report = StringIO.new
-        CSV::Writer.generate(report, ',') do |csv|
+        data = CSV.generate do |csv|
           csv << ['Id', 'Category', 'Guest Of', 'Name', 'Address 1', 'Address 2', 'Address 3', 'Address 4', 'RSVP Key', 'Actual Number', 'Estimated Number', 'Sent Thank You']
           @categories.each do |category|
             category.guests.each do |guest|
@@ -33,8 +32,7 @@ class GuestsController < ApplicationController
             end
           end
         end
-        report.rewind
-        send_data(report.read, :type => 'text/csv', :filename => 'Guests.csv')
+        send_data(data, :type => 'text/csv', :filename => 'Guests.csv')
       }
     end
   end
