@@ -19,6 +19,8 @@
           - guests.each do |guest|
             %li
               = link_to(guest.stamped? ? "<del>#{guest.name}</del>" : guest.name, guest)
+              - if guest.rsvp_key
+                %span.number= guest.rsvp_key
               - if guest.sent_thank_you
                 %span.number Done
               - elsif (not guest.needs_card?)
