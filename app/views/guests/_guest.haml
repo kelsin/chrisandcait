@@ -7,6 +7,10 @@
   %p
     == #{guest.number_display}
     %em== (#{@guest.number_actual_display} confirmed / #{@guest.number_estimate_display} estimated)
+  - unless @guest.rsvp_note.blank?
+    %p
+      Rsvp Note:
+      = @guest.rsvp_note
   - unless @guest.dietary_restrictions.blank?
     %p
       Dietary Restrictions:
