@@ -184,10 +184,6 @@ ul#nav li a:hover {
 span.rsvp {color: #fff; padding: 0 1em; }
 span.number { color: #fff; padding: 0 1em; }
 
-#recaptcha_widget_div {
-    padding: 0 20px;
-}
-
 span.error {
     color: #f00;
 }

@@ -42,7 +42,7 @@ class RsvpController < ApplicationController
 
     @guest.rsvp_on = Time.now
 
-    if verify_recaptcha(:model => @guest) && @guest.errors.empty? && @guest.save
+    if @guest.errors.empty? && @guest.save
       Rsvp.deliver_notify(@guest)
       respond_to do |format|
         format.html
